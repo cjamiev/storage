@@ -1,0 +1,13 @@
+curl --request POST \
+  --url http://localhost:8080/names \
+  --header 'content-type: application/json' \
+  --data '{
+    "name": "orange",
+    "type": "noun",
+    "definition": "a color and a fruit",
+    "tags": "fruit, food",
+    "isRealWord": true
+  }'
+
+curl --request GET \
+  --url http://localhost:8080/names/

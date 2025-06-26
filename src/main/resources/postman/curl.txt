@@ -1,13 +1,12 @@
 curl --request POST \
-  --url http://localhost:8080/names \
+  --url http://localhost:8080/library/new-type \
   --header 'content-type: application/json' \
-  --data '{
-    "name": "orange",
-    "type": "noun",
-    "definition": "a color and a fruit",
-    "tags": "fruit, food",
-    "isRealWord": true
-  }'
+  --data '
+  {
+    "type": "Game",
+    "records": "{ \"name\": \"Hollow Knight\", \"price\": \"$15\" }"
+  }
+'
 
 curl --request GET \
-  --url http://localhost:8080/names/
+  --url http://localhost:8080/library/

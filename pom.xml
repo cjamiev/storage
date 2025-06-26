@@ -9,9 +9,9 @@
 		<relativePath/>
 	</parent>
 	<groupId>com.cjv</groupId>
-	<artifactId>library</artifactId>
+	<artifactId>storage</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>library</name>
+	<name>storage</name>
 	<description>stores words, names, etc for use</description>
 	<url/>
 	<licenses>

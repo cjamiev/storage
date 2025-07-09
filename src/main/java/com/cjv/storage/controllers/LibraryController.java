@@ -32,7 +32,7 @@ public class LibraryController {
 
     @PostMapping("/new-type")
     public ResponseEntity<Integer> addNewTypeToLibrary(@RequestBody Library library) {
-        int result = libraryService.addNewTypeToLibrary(library);
+        int result = libraryService.addNewTypeToLibrary(library.getType());
 
         return new ResponseEntity<>(result, HttpStatus.CREATED);
     }

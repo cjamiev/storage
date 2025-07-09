@@ -33,10 +33,10 @@ public class LibraryService {
         return retrievedLibrary.orElse(Library.getEmptyLibrary());
     }
 
-    public int addNewTypeToLibrary(Library library) {
+    public int addNewTypeToLibrary(String type) {
         String sql = "INSERT INTO public.library(type, records) VALUES (?, ?);";
 
-        return jdbcTemplate.update(sql, library.getType(), library.getRecords());
+        return jdbcTemplate.update(sql, type, "");
     }
 
     public int updateRecordsInLibrary(Library library) {

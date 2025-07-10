@@ -25,6 +25,12 @@ public class LibraryController {
         return libraryService.getEntireLibrary();
     }
 
+    @GetMapping("/backup")
+    public ResponseEntity<Integer> backupLibrary() {
+        int result = libraryService.backupLibrary();
+        return new ResponseEntity<>(result, HttpStatus.CREATED);
+    }
+
     @GetMapping("/specific-type")
     public Library getSpecificType(@RequestParam String type) {
         return libraryService.getSpecificType(type);

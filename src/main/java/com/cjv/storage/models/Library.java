@@ -38,9 +38,6 @@ public class Library {
 
     @Override
     public String toString() {
-        return "Game{" +
-                "type=" + type +
-                ", records='" + records + '\'' +
-                '}';
+        return "{\"type\": \"" + type + "\", \"records\":" + records + '}';
     }
 }

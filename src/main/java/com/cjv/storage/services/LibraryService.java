@@ -2,6 +2,7 @@ package com.cjv.storage.services;
 
 import com.cjv.storage.models.Library;
 import com.cjv.storage.repository.LibraryRowMapper;
+import com.cjv.storage.utils.FileUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
@@ -23,6 +24,12 @@ public class LibraryService {
         String sql = "SELECT * FROM public.library";
 
         return jdbcTemplate.query(sql, new LibraryRowMapper());
+    }
+
+    public int backupLibrary() {
+        List<Library> contents = getEntireLibrary();
+
+        return  FileUtil.backupDB(contents.toString());
     }
 
     public Library getSpecificType(String type) {

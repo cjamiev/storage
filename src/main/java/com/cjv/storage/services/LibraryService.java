@@ -20,18 +20,6 @@ public class LibraryService {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public List<Library> getEntireLibrary() {
-        String sql = "SELECT * FROM public.library";
-
-        return jdbcTemplate.query(sql, new LibraryRowMapper());
-    }
-
-    public int backupLibrary() {
-        List<Library> contents = getEntireLibrary();
-
-        return  FileUtil.backupDB(contents.toString());
-    }
-
     public Library getSpecificType(String type) {
         String sql = "SELECT * FROM public.library WHERE type = ?";
 
@@ -51,4 +39,11 @@ public class LibraryService {
 
         return jdbcTemplate.update(sql, library.getRecords(), library.getType());
     }
+
+    public int backupLibrary(String type) {
+        Library contents = getSpecificType(type);
+
+        return  FileUtil.backupDB(type,contents.toString());
+    }
+
 }

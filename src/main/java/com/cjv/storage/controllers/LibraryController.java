@@ -20,14 +20,9 @@ public class LibraryController {
         this.libraryService = libraryService;
     }
 
-    @GetMapping("/")
-    public List<Library> getEntireLibrary() {
-        return libraryService.getEntireLibrary();
-    }
-
     @GetMapping("/backup")
-    public ResponseEntity<Integer> backupLibrary() {
-        int result = libraryService.backupLibrary();
+    public ResponseEntity<Integer> backupLibrary(@RequestParam String type) {
+        int result = libraryService.backupLibrary(type);
         return new ResponseEntity<>(result, HttpStatus.CREATED);
     }
 

@@ -1,5 +1,5 @@
 target/
-application.properties
+application.yaml
 backup/
 
 ### IntelliJ IDEA ###

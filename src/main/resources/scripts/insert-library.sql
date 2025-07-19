@@ -2,7 +2,6 @@ INSERT INTO public.library(
 	records, type)
 	VALUES ('', 'readme');
 
-
 INSERT INTO public.library(
 	records, type)
 	VALUES ('[]', 'constructed-words');

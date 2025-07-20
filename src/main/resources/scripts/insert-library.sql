@@ -28,10 +28,6 @@ INSERT INTO public.library(
 
 INSERT INTO public.library(
 	records, type)
-	VALUES ('[]', 'constructed-names');
-
-INSERT INTO public.library(
-	records, type)
 	VALUES ('[]', 'games');
 
 INSERT INTO public.library(

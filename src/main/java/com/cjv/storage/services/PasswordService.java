@@ -39,14 +39,31 @@ public class PasswordService {
         EncryptAndDecrypt passwordEncryptor = new EncryptAndDecrypt(configProperties.getSecretkey());
         String sql = "INSERT INTO public.password(id, username, password, url, created_date, tags, history) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
-        return jdbcTemplate.update(sql, password.getId(), password.getUsername(), passwordEncryptor.encrypt(password.getPassword()), password.getUrl(), password.getCreatedDate(), password.getTags(), password.getHistory());
+        return jdbcTemplate.update(
+                sql,
+                password.getId(),
+                password.getUsername(),
+                passwordEncryptor.encrypt(password.getPassword()),
+                password.getUrl(),
+                password.getCreatedDate(),
+                password.getTags(),
+                passwordEncryptor.encrypt(password.getHistory())
+        );
     }
 
     public int updatePassword(Password password) {
         EncryptAndDecrypt passwordEncryptor = new EncryptAndDecrypt(configProperties.getSecretkey());
         String sql = "UPDATE public.password SET password=?, url=?, created_date=?, tags=?, history=? WHERE id = ?;";
 
-        return jdbcTemplate.update(sql, passwordEncryptor.encrypt(password.getPassword()), password.getUrl(), password.getCreatedDate(), password.getTags(), password.getHistory(), password.getId());
+        return jdbcTemplate.update(
+                sql,
+                passwordEncryptor.encrypt(password.getPassword()),
+                password.getUrl(),
+                password.getCreatedDate(),
+                password.getTags(),
+                passwordEncryptor.encrypt(password.getHistory()),
+                password.getId()
+        );
     }
 
     public int backupPasswords() {

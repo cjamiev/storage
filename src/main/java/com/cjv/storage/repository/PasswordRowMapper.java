@@ -16,13 +16,13 @@ public class PasswordRowMapper implements RowMapper<Password> {
         this.shouldDecrypt = shouldDecrypt;
     }
 
-    private String getPassword (String encryptedPasswrd) {
+    private String getCorrectString (String encryptedstr) {
         EncryptAndDecrypt passwordDecryptor = new EncryptAndDecrypt(secretkey);
         if(this.shouldDecrypt) {
-            return passwordDecryptor.decrypt(encryptedPasswrd);
+            return passwordDecryptor.decrypt(encryptedstr);
         }
 
-        return encryptedPasswrd;
+        return encryptedstr;
     }
 
     @Override
@@ -30,11 +30,12 @@ public class PasswordRowMapper implements RowMapper<Password> {
         String id = rs.getString("id");
         String username = rs.getString("username");
         String encryptedPassword = rs.getString("password");
-        String password = getPassword(encryptedPassword);
+        String password = getCorrectString(encryptedPassword);
         String url = rs.getString("url");
         String createdDate = rs.getString("created_date");
         String tags = rs.getString("tags");
-        String history = rs.getString("history");
+        String encryptedHistory = rs.getString("history");
+        String history = getCorrectString(encryptedHistory);
 
         return new Password(id, username, password, url, createdDate, tags, history);
     }

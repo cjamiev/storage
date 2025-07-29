@@ -28,7 +28,7 @@ public class PasswordController {
 
     @GetMapping("/")
     public List<Password> getAllPasswords() {
-        return passwordService.getAllPasswords();
+        return passwordService.getAllPasswords(true);
     }
 
     @PostMapping("/")

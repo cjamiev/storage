@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.cjv</groupId>
 	<artifactId>storage</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>v1</version>
 	<name>storage</name>
 	<description>stores words, names, etc for use</description>
 	<url/>

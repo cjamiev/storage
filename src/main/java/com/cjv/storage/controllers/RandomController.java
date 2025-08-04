@@ -1,6 +1,5 @@
 package com.cjv.storage.controllers;
 
-import com.cjv.storage.models.Password;
 import com.cjv.storage.models.Random;
 import com.cjv.storage.services.RandomService;
 import org.springframework.beans.factory.annotation.Autowired;

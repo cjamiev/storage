@@ -1,7 +1,7 @@
 target/
 application.yaml
 application-productionspace.yaml
-backup/
+tmp/
 
 ### IntelliJ IDEA ###
 .idea/

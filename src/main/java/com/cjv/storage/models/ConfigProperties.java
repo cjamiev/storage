@@ -11,4 +11,5 @@ import org.springframework.stereotype.Component;
 @NoArgsConstructor
 public class ConfigProperties {
   private String secretkey;
+  private String mode;
 }

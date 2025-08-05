@@ -18,3 +18,4 @@ server:
     contextPath: /storage
 params:
   secretkey: Test$Secret$Key0
+  mode: dev

@@ -11,7 +11,7 @@ ALTER TABLE IF EXISTS public.email
     OWNER to postgres;
 
 -- Delete Table
- DROP TABLE IF EXISTS public.email;
+DROP TABLE IF EXISTS public.email;
 
 -- Insert into Table
 INSERT INTO public.email(

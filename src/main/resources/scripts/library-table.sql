@@ -17,10 +17,6 @@ DROP TABLE IF EXISTS public.library;
 -- Insert into Table
 INSERT INTO public.library(
 	records, type)
-	VALUES ('', 'readme');
-
-INSERT INTO public.library(
-	records, type)
 	VALUES ('[]', 'constructed-words');
 
 INSERT INTO public.library(
@@ -69,7 +65,7 @@ INSERT INTO public.library(
 
 INSERT INTO public.library(
 	records, type)
-	VALUES ('[]', 'passwords');
+	VALUES ('[]', 'purchases');
 
 INSERT INTO public.library(
 	records, type)

@@ -1,18 +1,18 @@
 package com.cjv.storage.repository;
 
-import com.cjv.storage.models.Random;
+import com.cjv.storage.models.Word;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class RandomRowMapper implements RowMapper<Random> {
+public class WordRowMapper implements RowMapper<Word> {
     @Override
-    public Random mapRow(ResultSet rs, int rowNum) throws SQLException {
+    public Word mapRow(ResultSet rs, int rowNum) throws SQLException {
         String id =  rs.getString("id");
         String type = rs.getString("type");
 
-        return new Random(id, type);
+        return new Word(id, type);
     }
 }
 

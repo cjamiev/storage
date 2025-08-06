@@ -6,18 +6,18 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table
-public class Random {
+public class Word {
     @Id
     private String id;
     private String type;
 
-    public Random(String id, String type) {
+    public Word(String id, String type) {
         this.id = id;
         this.type = type;
     }
 
-    public static Random getEmptyRandom() {
-        return new Random("", "");
+    public static Word getEmptyWord() {
+        return new Word("", "");
     }
 
     public String getId() {

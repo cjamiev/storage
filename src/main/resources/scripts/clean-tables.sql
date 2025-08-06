@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS public.library;
 DROP TABLE IF EXISTS public.location;
 DROP TABLE IF EXISTS public.name;
 DROP TABLE IF EXISTS public.password;
-DROP TABLE IF EXISTS public.random;
+DROP TABLE IF EXISTS public.word;
 DROP TABLE IF EXISTS public.street;
 
 -- Recreate Tables
@@ -77,16 +77,16 @@ TABLESPACE pg_default;
 ALTER TABLE IF EXISTS public.password
     OWNER to postgres;
 
-CREATE TABLE IF NOT EXISTS public.random
+CREATE TABLE IF NOT EXISTS public.word
 (
     id character varying(50) COLLATE pg_catalog."default" NOT NULL,
     type character varying(50) COLLATE pg_catalog."default" NOT NULL,
-    CONSTRAINT random_pkey PRIMARY KEY (id)
+    CONSTRAINT word_pkey PRIMARY KEY (id)
 )
 
 TABLESPACE pg_default;
 
-ALTER TABLE IF EXISTS public.random
+ALTER TABLE IF EXISTS public.word
     OWNER to postgres;
 
 CREATE TABLE IF NOT EXISTS public.street

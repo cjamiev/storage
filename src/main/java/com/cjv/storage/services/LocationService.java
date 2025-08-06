@@ -53,7 +53,7 @@ public class LocationService {
     }
 
     public int deleteLocation(String code) {
-        String sql = "DELETE FROM public.random WHERE code = ?";
+        String sql = "DELETE FROM public.location WHERE code = ?";
 
         return jdbcTemplate.update(
                 sql,

@@ -31,4 +31,18 @@ public class LocationController {
 
         return new ResponseEntity<>(result, HttpStatus.CREATED);
     }
+
+    @PutMapping("/")
+    public ResponseEntity<Integer> deleteLocation(@RequestBody Location location) {
+        int result = locationService.updateLocation(location);
+
+        return new ResponseEntity<>(result, HttpStatus.CREATED);
+    }
+
+    @DeleteMapping("/{code}")
+    public ResponseEntity<Integer> deleteLocation(@PathVariable("code") String code) {
+        int result = locationService.deleteLocation(code);
+
+        return new ResponseEntity<>(result, HttpStatus.CREATED);
+    }
 }

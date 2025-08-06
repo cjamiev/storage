@@ -2,6 +2,7 @@ package com.cjv.storage.controllers;
 
 import com.cjv.storage.models.Email;
 import com.cjv.storage.services.EmailService;
+import com.cjv.storage.utils.EncodeAndDecode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,6 +29,15 @@ public class EmailController {
     @PostMapping("/")
     public ResponseEntity<Integer> addNewEmail(@RequestBody Email email) {
         int result = emailService.addNewEmail(email);
+
+        return new ResponseEntity<>(result, HttpStatus.CREATED);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Integer> deleteEmail(@PathVariable("id") String id) {
+        EncodeAndDecode decoder = new EncodeAndDecode();
+        String emailId = decoder.decodeStr(id);
+        int result = emailService.deleteEmail(emailId);
 
         return new ResponseEntity<>(result, HttpStatus.CREATED);
     }

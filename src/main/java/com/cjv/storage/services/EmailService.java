@@ -38,4 +38,13 @@ public class EmailService {
                 email.getId()
         );
     }
+
+    public int deleteEmail(String id) {
+        String sql = "DELETE FROM public.email WHERE id = ?";
+
+        return jdbcTemplate.update(
+                sql,
+                id
+        );
+    }
 }

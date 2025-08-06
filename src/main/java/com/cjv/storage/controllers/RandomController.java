@@ -2,6 +2,7 @@ package com.cjv.storage.controllers;
 
 import com.cjv.storage.models.Random;
 import com.cjv.storage.services.RandomService;
+import com.cjv.storage.utils.EncodeAndDecode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,6 +29,13 @@ public class RandomController {
     @PostMapping("/")
     public ResponseEntity<Integer> addNewRandom(@RequestBody Random random) {
         int result = randomService.addNewRandom(random);
+
+        return new ResponseEntity<>(result, HttpStatus.CREATED);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Integer> deleteRandom(@PathVariable("id") String id) {
+        int result = randomService.deleteRandom(id);
 
         return new ResponseEntity<>(result, HttpStatus.CREATED);
     }

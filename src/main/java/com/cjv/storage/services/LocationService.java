@@ -40,4 +40,24 @@ public class LocationService {
                 location.getCities()
         );
     }
+
+    public int updateLocation(Location location) {
+        String sql = "UPDATE public.location SET state=?, cities=? WHERE code = ?;";
+
+        return jdbcTemplate.update(
+                sql,
+                location.getState(),
+                location.getCities(),
+                location.getCode()
+        );
+    }
+
+    public int deleteLocation(String code) {
+        String sql = "DELETE FROM public.random WHERE code = ?";
+
+        return jdbcTemplate.update(
+                sql,
+                code
+        );
+    }
 }

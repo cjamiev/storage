@@ -38,4 +38,13 @@ public class StreetService {
                 street.getId()
         );
     }
+
+    public int deleteStreet(String id) {
+        String sql = "DELETE FROM public.street WHERE id = ?";
+
+        return jdbcTemplate.update(
+                sql,
+                id
+        );
+    }
 }

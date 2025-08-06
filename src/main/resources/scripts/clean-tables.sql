@@ -1,4 +1,4 @@
--- Used to reset storage-test table
+-- Used to reset storage_test table
 
 -- Drop Tables
 DROP TABLE IF EXISTS public.email;

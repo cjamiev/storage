@@ -31,4 +31,11 @@ public class NameController {
 
         return new ResponseEntity<>(result, HttpStatus.CREATED);
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Integer> deleteName(@PathVariable("id") String id) {
+        int result = nameService.deleteName(id);
+
+        return new ResponseEntity<>(result, HttpStatus.CREATED);
+    }
 }

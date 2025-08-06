@@ -39,4 +39,13 @@ public class RandomService {
                 random.getType()
         );
     }
+
+    public int deleteRandom(String id) {
+        String sql = "DELETE FROM public.random WHERE id = ?";
+
+        return jdbcTemplate.update(
+                sql,
+                id
+        );
+    }
 }

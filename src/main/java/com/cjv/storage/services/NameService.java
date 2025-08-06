@@ -41,4 +41,13 @@ public class NameService {
                 name.getGender()
         );
     }
+
+    public int deleteName(String id) {
+        String sql = "DELETE FROM public.name WHERE id = ?";
+
+        return jdbcTemplate.update(
+                sql,
+                id
+        );
+    }
 }

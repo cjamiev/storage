@@ -37,6 +37,10 @@ INSERT INTO public.library(
 
 INSERT INTO public.library(
 	records, type)
+	VALUES ('[]', 'intervals');
+
+INSERT INTO public.library(
+	records, type)
 	VALUES ('[]', 'names');
 
 INSERT INTO public.library(
@@ -74,6 +78,10 @@ INSERT INTO public.library(
 INSERT INTO public.library(
 	records, type)
 	VALUES ('[]', 'favorites');
+
+INSERT INTO public.library(
+	records, type)
+	VALUES ('[]', 'favorite-types');
 
 INSERT INTO public.library(
 	records, type)

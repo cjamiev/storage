@@ -2,6 +2,7 @@ package com.cjv.storage.controllers;
 
 import com.cjv.storage.models.Url;
 import com.cjv.storage.services.UrlService;
+import com.cjv.storage.utils.EncodeAndDecode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -41,7 +42,9 @@ public class UrlController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Integer> deleteUrl(@PathVariable("id") String id) {
-        int result = urlService.deleteUrl(id);
+        EncodeAndDecode decoder = new EncodeAndDecode();
+        String urlId = decoder.decodeStr(id);
+        int result = urlService.deleteUrl(urlId);
 
         return new ResponseEntity<>(result, HttpStatus.CREATED);
     }

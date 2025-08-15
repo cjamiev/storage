@@ -6,18 +6,18 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table
-public class City {
+public class Url {
     @Id
     private String id;
-    private String origin;
+    private String category;
 
-    public City(String id, String origin) {
+    public Url(String id, String category) {
         this.id = id;
-        this.origin = origin;
+        this.category = category;
     }
 
-    public static City getEmptyCity() {
-        return new City("", "");
+    public static Url getEmptyUrl() {
+        return new Url("", "");
     }
 
     public String getId() {
@@ -28,18 +28,18 @@ public class City {
         this.id = id;
     }
 
-    public String getOrigin() {
-        return origin;
+    public String getCategory() {
+        return category;
     }
 
-    public void setOrigin(String origin) {
-        this.origin = origin;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     @Override
     public String toString() {
         return "{\"id\": \"" + id
-                + "\", \"origin\":\"" + origin
+                + "\", \"category\":\"" + category
                 + "\"}";
     }
 }

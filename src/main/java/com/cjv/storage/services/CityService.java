@@ -50,12 +50,12 @@ public class CityService {
         );
     }
 
-    public int deleteCity(String code) {
+    public int deleteCity(String id) {
         String sql = "DELETE FROM public.city WHERE id = ?";
 
         return jdbcTemplate.update(
                 sql,
-                code
+                id
         );
     }
 }

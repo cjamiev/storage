@@ -3,7 +3,7 @@
 -- Drop Tables
 DROP TABLE IF EXISTS public.email;
 DROP TABLE IF EXISTS public.library;
-DROP TABLE IF EXISTS public.location;
+DROP TABLE IF EXISTS public.city;
 DROP TABLE IF EXISTS public.name;
 DROP TABLE IF EXISTS public.password;
 DROP TABLE IF EXISTS public.word;
@@ -33,17 +33,16 @@ TABLESPACE pg_default;
 ALTER TABLE IF EXISTS public.library
     OWNER to postgres;
 
-CREATE TABLE IF NOT EXISTS public.location
+CREATE TABLE IF NOT EXISTS public.city
 (
-    code character varying(2) COLLATE pg_catalog."default" NOT NULL,
-    state character varying(30) COLLATE pg_catalog."default" NOT NULL,
-    cities text COLLATE pg_catalog."default" NOT NULL,
-    CONSTRAINT city_pkey PRIMARY KEY (code)
+    id character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    origin character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT city_pkey1 PRIMARY KEY (id)
 )
 
 TABLESPACE pg_default;
 
-ALTER TABLE IF EXISTS public.location
+ALTER TABLE IF EXISTS public.city
     OWNER to postgres;
 
 CREATE TABLE IF NOT EXISTS public.name
